@@ -1,15 +1,17 @@
-<p>type somthing please</p>
+
 <mat-card>
+  <mat-form-field>
+    <input matInput type="text" [(ngModel)]="enteredTitle">
+  </mat-form-field>
+
 <mat-form-field>
-<textarea matInput rows="2" [(ngModel)]="enteredValue"></textarea>
+<textarea matInput rows="2" [(ngModel)]="enteredContent"></textarea>
 </mat-form-field>
 <button mat-raised-button (click)="onAddPost()" type="button" class="btn btn-success">Save Post</button>
 </mat-card>
 
 <!-- [value]="newPost" #PostInput -->
 
-<p>
 
-</p>
 
 

@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
+
 <title>EpicDeal</title>
-</head>
-<body>
-  <app-post-create></app-post-create>
-</body>
-</html>
+  <app-header></app-header>
+<main>
+  <app-post-create (postCreated)="onPostAdded($event)" ></app-post-create>
+  <app-post-list [posts]="storedPosts"> </app-post-list>
+</main>

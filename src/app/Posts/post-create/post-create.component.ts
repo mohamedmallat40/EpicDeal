@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import Swal from 'sweetalert2';
 
 
@@ -8,12 +8,18 @@ import Swal from 'sweetalert2';
   styleUrls: ['./post-create.component.css']
 })
 export class PostCreateComponent implements OnInit {
-  enteredValue = '';
-  newPost = 'No content';
+  enteredTitle = '';
+  enteredContent = '';
+ @Output() postCreated = new EventEmitter();
 
   onAddPost() {
-    this.newPost = this.enteredValue;
-    Swal.fire('saved !', this.newPost, 'success'); // tatla3 w t9ollik jawwik behy sahby
+    // this.newPost = this.enteredValue;
+    const post = {
+      title: this.enteredTitle,
+      content: this.enteredContent
+    };
+    Swal.fire('saved !', this.enteredTitle, 'success'); // tatla3 w t9ollik jawwik behy sahby
+    this.postCreated.emit(post);
   }
   constructor() {
    }

@@ -5,8 +5,14 @@ import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { PostCreateComponent } from './Posts/post-create/post-create.component';
-import { from } from 'rxjs';
-import {MatInputModule, MatCardModule, MatButtonModule} from '@angular/material';
+import { HeaderComponent } from './header/header.component'; // Angular matirieal
+import {MatInputModule,
+        MatCardModule,
+        MatButtonModule,
+        MatToolbarModule,
+        MatExpansionModule
+      } from '@angular/material';
+import { PostListComponent } from './Posts/post-list/post-list.component';
 
 
 
@@ -14,6 +20,8 @@ import {MatInputModule, MatCardModule, MatButtonModule} from '@angular/material'
   declarations: [
     AppComponent,
     PostCreateComponent,
+    HeaderComponent,
+    PostListComponent,
 
   ],
   imports: [
@@ -22,7 +30,9 @@ import {MatInputModule, MatCardModule, MatButtonModule} from '@angular/material'
     BrowserAnimationsModule,
     MatInputModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
