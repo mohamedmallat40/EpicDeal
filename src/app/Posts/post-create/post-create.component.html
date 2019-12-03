@@ -1,7 +1,10 @@
 
 <mat-card>
   <form (submit)="onAddPost(postform)" #postform ="ngForm">
-      <mat-form-field>
+
+
+
+    <mat-form-field>
           <input
           matInput
           type="text"
@@ -13,7 +16,9 @@
           #title="ngModel">
           <mat-error *ngIf="title.invalid">please entre a post title</mat-error>
         </mat-form-field>
-      <mat-form-field>
+
+
+        <mat-form-field>
       <textarea
       matInput
       rows="4"
@@ -24,13 +29,18 @@
       #content="ngModel"></textarea>
       <mat-error *ngIf="content.invalid">please entre a post content</mat-error>
           </mat-form-field>
-        <button
+
+
+          <button
       mat-raised-button
       color="accent"
       type="submit"
       class="btn btn-success">Save Post</button>
-  </form>
+
+
+    </form>
 </mat-card>
+
 
 
 
