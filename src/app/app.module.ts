@@ -11,7 +11,9 @@ import {MatInputModule,
         MatCardModule,
         MatButtonModule,
         MatToolbarModule,
-        MatExpansionModule
+        MatExpansionModule,
+        MatSelect,
+        MatSelectModule
       } from '@angular/material';
 import { PostListComponent } from './Posts/post-list/post-list.component';
 
@@ -33,6 +35,7 @@ import { PostListComponent } from './Posts/post-list/post-list.component';
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
+    MatSelectModule,
     MatExpansionModule,
     HttpClientModule
   ],

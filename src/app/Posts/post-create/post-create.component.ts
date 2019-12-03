@@ -11,21 +11,25 @@ import { PostsService } from '../posts.service';
   styleUrls: ['./post-create.component.css']
 })
 export class PostCreateComponent implements OnInit {
+
   enteredTitle = '';
   enteredContent = '';
+  enteredPrice = '';
+  enteredTypes = [{
+      value: 'Samsung',  viewValue: 'Samsung'},
+    { value: 'Iphone',   viewValue: 'Iphone'},
+    { value: 'Huawei',   viewValue: 'Huawei'}
+  ];
 
   constructor(public postsService: PostsService) {}
+
 
   onAddPost(form: NgForm) {
     if (form.invalid ) {
       return;
     }
-    // const post: Post = {
-    //    title: form.value.title ,
-    //    content: form.value.content
-    //  };
     Swal.fire('saved !', this.enteredTitle, 'success'); // tatla3 w t9ollik jawwik behy sahby
-    this.postsService.addPost(form.value.title, form.value.content);
+    this.postsService.addPost(form.value.title, form.value.content, );
     form.resetForm();
   }
 
