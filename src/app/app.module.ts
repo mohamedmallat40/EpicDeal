@@ -16,6 +16,7 @@ import {MatInputModule,
         MatSelectModule
       } from '@angular/material';
 import { PostListComponent } from './Posts/post-list/post-list.component';
+import { AppRoutingModule } from './app.routing.module';
 
 
 
@@ -31,6 +32,7 @@ import { PostListComponent } from './Posts/post-list/post-list.component';
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     MatInputModule,
     MatCardModule,
     MatButtonModule,
