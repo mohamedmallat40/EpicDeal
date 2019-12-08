@@ -16,7 +16,7 @@ import {MatInputModule,
         MatSelectModule
       } from '@angular/material';
 import { PostListComponent } from './Posts/post-list/post-list.component';
-import { AppRoutingModule } from './app.routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 
 

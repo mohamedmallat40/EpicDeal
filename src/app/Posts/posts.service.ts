@@ -43,6 +43,9 @@ export class PostsService {
   }
 
 
+    getPost(id: string) {
+      return {...this.posts.find( p => p.id === id)};
+    }
 
   addPost(title: string, content: string) {
     // tslint:disable-next-line: object-literal-shorthand

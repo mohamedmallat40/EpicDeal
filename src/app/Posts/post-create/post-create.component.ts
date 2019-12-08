@@ -2,6 +2,8 @@ import { Component, OnInit} from '@angular/core';
 import Swal from 'sweetalert2';
 import { NgForm } from '@angular/forms';
 import { PostsService } from '../posts.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Post } from '../post.model';
 
 
 
@@ -14,14 +16,17 @@ export class PostCreateComponent implements OnInit {
 
   enteredTitle = '';
   enteredContent = '';
-  enteredPrice = '';
-  enteredTypes = [{
-      value: 'Samsung',  viewValue: 'Samsung'},
-    { value: 'Iphone',   viewValue: 'Iphone'},
-    { value: 'Huawei',   viewValue: 'Huawei'}
-  ];
+  private mode = 'create';
+  private postId: string ;
+  private post: Post;
+  // enteredPrice = '';
+  // enteredTypes = [{
+  //     value: 'Samsung',  viewValue: 'Samsung'},
+  //   { value: 'Iphone',   viewValue: 'Iphone'},
+  //   { value: 'Huawei',   viewValue: 'Huawei'}
+  // ];
 
-  constructor(public postsService: PostsService) {}
+  constructor(public postsService: PostsService, public route: ActivatedRoute) {}
 
 
   onAddPost(form: NgForm) {
@@ -35,7 +40,16 @@ export class PostCreateComponent implements OnInit {
 
 
   ngOnInit() {
-
+    this.route.paramMap.subscribe((paramMap: ParamMap) => {
+      if (paramMap.has('postId')) {
+        this.mode = 'edit';
+        this.postId = paramMap.get('postId');
+        this.post = this.postsService.getPost(this.postId);
+      } else {
+        this.mode = 'create';
+        this.postId = null;
+      }
+    });
 
   }
 }
